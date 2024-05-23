@@ -94,12 +94,12 @@ function SpeedDial({
     unmount: {
       opacity: 0,
       transform: "scale(0.5)",
-      transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
+      transition: { duration: 0.2 },
     },
     mount: {
       opacity: 1,
       transform: "scale(1)",
-      transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
+      transition: { duration: 0.2 },
     },
   };
   const appliedAnimation = merge(animation, animate);

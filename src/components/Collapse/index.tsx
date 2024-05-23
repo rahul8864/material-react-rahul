@@ -66,11 +66,11 @@ export const Collapse = React.forwardRef<HTMLDivElement, CollapseProps>(
     const mainAnimation = {
       unmount: {
         height: "0px",
-        transition: { duration: 0.3, times: [0.4, 0, 0.2, 1] },
+        transition: { duration: 0.3 },
       },
       mount: {
         height: "auto",
-        transition: { duration: 0.3, times: [0.4, 0, 0.2, 1] },
+        transition: { duration: 0.3 },
       },
     };
 

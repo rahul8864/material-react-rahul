@@ -42,11 +42,11 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
     const heightAnimation = {
       unmount: {
         height: "0px",
-        transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
+        transition: { duration: 0.2 },
       },
       mount: {
         height: "auto",
-        transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
+        transition: { duration: 0.2 },
       },
     };
 
