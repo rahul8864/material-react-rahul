@@ -1,7 +1,3 @@
-function findMatch(data, find, defaultValue) {
-  const founded = data.findIndex((el) => el === find);
-
-  return founded >= 0 ? find : defaultValue;
+export default function findMatch(data, find, defaultValue) {
+  return data.includes(find) ? find : defaultValue;
 }
-
-export default findMatch;

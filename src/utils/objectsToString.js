@@ -1,5 +1,14 @@
-import objectsToArray from "./objectsToArray";
-
 export default function objectsToString(object) {
-  return objectsToArray(object).join(" ");
+  const valuesToString = (obj) =>
+    Object.values(obj).reduce((result, value) => {
+      if (typeof value === "string") {
+        return `${result} ${value}`;
+      }
+      if (typeof value === "object" && !Array.isArray(value) && value !== null) {
+        return `${result} ${valuesToString(value)}`;
+      }
+      return result;
+    }, "").trim();
+
+  return valuesToString(object);
 }

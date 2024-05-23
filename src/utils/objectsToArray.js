@@ -1,15 +1,11 @@
 export default function objectsToArray(object) {
-  let result = [];
-
-  Object.values(object).forEach((value) => {
+  return Object.values(object).reduce((result, value) => {
     if (typeof value === "string") {
-      result = [...result, value];
-    } else if (typeof value === "object" && !Array.isArray(value) && value !== null) {
-      result = [...result, ...objectsToArray(value)];
+      return [...result, value];
     }
-
-    return undefined;
-  });
-
-  return result;
+    if (typeof value === "object" && !Array.isArray(value) && value !== null) {
+      return [...result, ...objectsToArray(value)];
+    }
+    return result;
+  }, []);
 }
