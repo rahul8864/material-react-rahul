@@ -1,4 +1,4 @@
-import React, { createContext, useContext, ReactNode, FC } from "react";
+import React, { createContext, useContext, ReactNode, FC, useMemo } from "react";
 import merge from "deepmerge";
 import theme from "../theme/index";
 import combineMerge from "../utils/combineMerge";
@@ -13,7 +13,7 @@ const MaterialTailwindTheme = createContext<typeof theme>(theme);
 MaterialTailwindTheme.displayName = "MaterialTailwindThemeProvider";
 
 const ThemeProvider: FC<ThemeProviderProps> = ({ value = theme, children }) => {
-  const mergedValue = merge(theme, value, { arrayMerge: combineMerge });
+  const mergedValue = useMemo(() => merge(theme, value, { arrayMerge: combineMerge }), [value]);
 
   return (
     <MaterialTailwindTheme.Provider value={mergedValue}>
