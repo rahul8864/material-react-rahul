@@ -46,7 +46,7 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabPanelProps>(
     // 5. return
     return (
       <LazyMotion features={domAnimation}>
-        <NewAnimatePresence exitBeforeEnter>
+        <NewAnimatePresence mode="wait">
           <m.div
             {...rest}
             ref={ref}
